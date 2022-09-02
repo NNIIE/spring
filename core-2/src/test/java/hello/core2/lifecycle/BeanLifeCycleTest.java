@@ -11,7 +11,7 @@ public class BeanLifeCycleTest {
     @Configuration
     static class LiftCycleConfig {
 
-        @Bean
+        @Bean(initMethod = "init", destroyMethod = "close")
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("http://www.hello.co.kr");
